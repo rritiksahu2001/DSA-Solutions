@@ -1,0 +1,23 @@
+class Solution:
+
+	def nthRowOfPascalTriangle(self,n):
+	    M =[]
+	    lst=[]
+	    for i in range(n):
+	        for j in range(n):
+	            lst.append(0)
+	        M.append(lst)
+	        lst=[]
+	    
+	    for i in range(n):
+	        for j in range(i+1):
+	            if j==0 or j==i:
+	                M[i][j]=1
+	            else:
+	                M[i][j]= M[i-1][j-1]+M[i-1][j]
+	                
+	    lst = []        
+        for i in range(n):
+            lst.append(M[n-1][i])
+        return lst
+   
