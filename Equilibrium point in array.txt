@@ -1,0 +1,18 @@
+class Solution:
+    # Complete this function
+    
+    #Function to find equilibrium point in the array.
+    def equilibriumPoint(self,A, N):
+        if N==1:
+            return 1
+        arrsum =0
+        
+        for i in A:
+            arrsum+=i
+        s =0
+        for i in range(N-1):
+            s +=A[i]
+            if arrsum- s -A[i+1] ==s:
+                return i+2
+
+        return -1
